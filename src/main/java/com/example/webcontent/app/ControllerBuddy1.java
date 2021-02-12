@@ -1,3 +1,4 @@
+
 package com.example.webcontent.app;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,15 +10,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ControllerBuddy1 {
 
     @Autowired
-    private AddressBookRepository adressbookR;
+    private BuddyInfoRepository brepo;
 
-
-    @GetMapping("/aa")
-    public String method (Model model){
-        model.addAttribute("book",adressbookR.findAll());
-
-
-        return "aa";
+    @GetMapping("/buddy")
+    public String buddyForm(Model model) {
+        model.addAttribute("BuddyInfo", new BuddyInfo());
+        return "AddBuddy";
     }
 
 
