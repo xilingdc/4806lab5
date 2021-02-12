@@ -1,4 +1,4 @@
-package src.test.java;
+package com.example.webcontent;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -16,7 +16,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 @SpringBootTest(classes={ServingWebContentApplication.class})
 @AutoConfigureMockMvc
-public class Mytest {
+public class ApplicationTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -26,4 +26,6 @@ public class Mytest {
         this.mockMvc.perform(get("/buddy")).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("Modify BuddyInfo")));
     }
+
+
 }
